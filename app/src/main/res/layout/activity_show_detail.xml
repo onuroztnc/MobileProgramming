@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".showDetail">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp"
+            >
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="0dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textViewName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="45dp"
+                        android:text="Name" />
+
+                    <EditText
+                        android:id="@+id/showDetailName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginRight="10dp"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:text="@string/name_text" />
+
+                    <TextView
+                        android:id="@+id/textViewName2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="6dp"
+
+                        android:layout_marginRight="10dp"
+                        android:text="Surname" />
+
+                    <EditText
+                        android:id="@+id/showDetailSurname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginRight="10dp"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:text="@string/surname_text"/>
+
+                    <TextView
+                        android:id="@+id/textViewName3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="5dp"
+
+                        android:layout_marginRight="10dp"
+                        android:text="@string/personalID_text" />
+
+                    <TextView
+                        android:id="@+id/showDetailpersonID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginRight="10dp"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="18sp"
+                        android:text="@string/personalID_text"/>
+
+                    <TextView
+                        android:id="@+id/textViewName4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="5dp"
+
+                        android:layout_marginRight="10dp"
+                        android:text="@string/bDate_text" />
+
+                    <TextView
+                        android:id="@+id/showDetailBDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginRight="10dp"
+                        android:ems="10"
+                        android:text="@string/bDate_text"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/textViewName5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+
+                        android:layout_marginRight="10dp"
+                        android:text="@string/phone_text" />
+
+                    <EditText
+                        android:id="@+id/showDetailPhoneNumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginRight="10dp"
+                        android:ems="10"
+                        android:inputType="phone"
+                        android:text="@string/phone_text"/>
+
+                    <TextView
+                        android:id="@+id/textViewName6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="5dp"
+
+                        android:layout_marginRight="10dp"
+                        android:text="@string/address_text" />
+
+                    <EditText
+                        android:id="@+id/ShowDetailAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="20dp"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:text="Address"
+
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/showDetailPic"
+                        android:layout_width="173dp"
+                        android:layout_height="192dp"
+                        android:layout_marginTop="50dp"
+                        android:src="@mipmap/profil_icon"/>
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="30dp"
+                        android:text="AGE"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/age"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="Age"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="0dp">
+
+
+                <Button
+                    android:id="@+id/edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="0.5"
+                    android:text="EDIT"
+                    android:onClick="editInformation"/>
+
+                <Button
+                    android:id="@+id/delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="0.5"
+                    android:text="DELETE"
+                    android:onClick="deletePerson"/>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

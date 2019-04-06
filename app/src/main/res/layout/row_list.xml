@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="20dp"
+    android:padding="5dp"
+    android:id="@+id/card_view"
+    >
+
+
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/linear"
+        >
+
+        <ImageView
+            android:id="@+id/imageview"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:srcCompat="@mipmap/ic_launcher"
+            android:padding="0dp"/>
+
+        <TextView
+            android:id="@+id/nameAndSurname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:text="TextView"
+            android:textColor="@color/colorBlack"
+            android:textSize="22sp"
+            android:gravity="center"/>
+
+        <ImageView
+            android:id="@+id/courseView"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            app:srcCompat="@mipmap/course_icon"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="0dp"/>
+
+        <ImageButton
+            android:id="@+id/callButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@color/white"
+            app:srcCompat="@drawable/ic_launcher_background"
+            android:padding="0dp"
+            />
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>

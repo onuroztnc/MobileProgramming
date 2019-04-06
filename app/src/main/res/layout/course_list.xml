@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="@color/colorPrimary"
+    app:cardCornerRadius="20dp"
+
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:id="@+id/linear_course">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="0.7">
+
+            <TextView
+                android:id="@+id/courseName"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="22sp"
+                android:text="Course Name"
+                android:paddingLeft="6dp"
+                android:textColor="@color/colorBlack"/>
+
+            <TextView
+                android:id="@+id/teacher"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:text="Teacher Name"
+                android:paddingLeft="12dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="0.3">
+
+            <TextView
+                android:id="@+id/agno2"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_height="40dp"
+                android:textSize="15sp"
+                android:text="GRADE:"
+                android:textColor="@color/colorBlack"/>
+
+            <TextView
+                android:id="@+id/agno"
+                android:layout_width="match_parent"
+                android:textSize="14sp"
+                android:layout_height="25dp"
+                android:gravity="center"
+                android:text="AGNO" />
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v7.widget.CardView>

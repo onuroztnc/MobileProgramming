@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="LoadPicture">
+        <item>Take a Picture From The Camera</item>
+        <item>Get Image From Gallery</item>
+    </array>
+</resources>
