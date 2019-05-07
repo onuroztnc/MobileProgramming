@@ -1,6 +1,7 @@
 package com.example.mobileprogramming;
 
-public class Person {
+public class Person implements Comparable{
+
 
     String imgSrc;
     int callBtnSrc;
@@ -47,5 +48,10 @@ public class Person {
 
     public void setPersonNameSurname(String personNameSurname) {
         this.personNameSurname = personNameSurname;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        return this.personNameSurname.compareTo(((Person)o).getPersonNameSurname());
     }
 }

@@ -12,6 +12,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -21,16 +23,19 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class MyAdapter  extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+public class MyAdapter  extends RecyclerView.Adapter<MyAdapter.ViewHolder> implements Filterable {
 
     Context context;
     ArrayList<Person> allPerson = new ArrayList<>();
     LayoutInflater layoutInflater;
+    ArrayList<Person> origPersonList;
+    private Filter personFilter;
 
 
 
 
     public MyAdapter(Context context, ArrayList<Person> allPerson) {
+        this.origPersonList = allPerson;
         this.context = context;
         this.allPerson = allPerson;
     }
@@ -143,6 +148,54 @@ public class MyAdapter  extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             name_surname = itemView.findViewById(R.id.nameAndSurname);
             linearLayout = itemView.findViewById(R.id.linear);
 
+
+        }
+    }
+
+
+    @Override
+    public Filter getFilter() {
+        if(personFilter == null){
+            personFilter = new PersonFilter();
+        }
+
+        return personFilter;
+    }
+
+    private class PersonFilter extends Filter{
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            FilterResults results = new FilterResults();
+            // We implement here the filter logic
+            if (constraint == null || constraint.length() == 0) {
+                // No filter implemented we return all the list
+                results.values = origPersonList;
+                results.count = origPersonList.size();
+            }
+            else {
+                // We perform filtering operation
+                ArrayList<Person> nPersonList = new ArrayList<Person>();
+
+                for (Person p : allPerson) {
+                    if (p.getPersonNameSurname().toLowerCase().contains(constraint.toString().toLowerCase()))
+                        nPersonList.add(p);
+                }
+
+                results.values = nPersonList;
+                results.count = nPersonList.size();
+
+            }
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+
+            // Now we have to inform the adapter about the new list filtered
+            if (results.count != 0) {
+                allPerson = (ArrayList<Person>) results.values;
+                notifyDataSetChanged();
+            }
 
         }
     }

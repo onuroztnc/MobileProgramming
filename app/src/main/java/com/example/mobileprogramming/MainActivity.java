@@ -15,12 +15,16 @@ import java.text.SimpleDateFormat;
 import android.app.DatePickerDialog;
 import android.util.Base64;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.content.Context;
 import android.widget.DatePicker;
 import android.widget.ImageView;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -72,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, PersonList.class);
         startActivity(intent);
     }
+
 
 
 }

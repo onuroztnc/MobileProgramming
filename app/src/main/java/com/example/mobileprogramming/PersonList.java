@@ -7,9 +7,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.LinearLayout;
+import android.widget.SearchView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 
 public class PersonList extends AppCompatActivity {
@@ -17,6 +22,7 @@ public class PersonList extends AppCompatActivity {
     ArrayList<Person> allPerson = new ArrayList<>();
     RecyclerView recyclerView;
     Context context = this;
+    MyAdapter myAdapter;
 
 
     @Override
@@ -32,7 +38,7 @@ public class PersonList extends AppCompatActivity {
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setHasFixedSize(true);
         //
-        MyAdapter myAdapter = new MyAdapter(context, allPerson);
+        myAdapter = new MyAdapter(context, allPerson);
         recyclerView.setAdapter(myAdapter);
 
     }
@@ -51,9 +57,32 @@ public class PersonList extends AppCompatActivity {
             allPerson.add(new Person(id, img_src, R.mipmap.call_img_padding,name_surname));
         }
 
+        Collections.sort(allPerson, Collections.reverseOrder());
+
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.menu_search, menu);
+        MenuItem menuItem = menu.findItem(R.id.menuSearch);
+        SearchView searchView = (SearchView) menuItem.getActionView();
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                myAdapter.getFilter().filter(newText);
+                return false;
+            }
+        });
 
 
-
+        return super.onCreateOptionsMenu(menu);
+    }
 }
